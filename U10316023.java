@@ -20,7 +20,6 @@ public  class  U10316023 extends JFrame{
 		add(user_circle,BorderLayout.NORTH);
 		add(user_square,BorderLayout.CENTER);
 		add(user_triangle,BorderLayout.SOUTH);
-
 	}
 	
 	public static void main (String[] args){
@@ -68,6 +67,24 @@ class CIRCLE extends JPanel{
 		
 		add(circle,BorderLayout.WEST);
 		add(c_a,BorderLayout.EAST);
+		
+		calculate.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				String answer_area = text_radius.getText()*text_radius.getText()* Math.PI;
+				String answer_perimeter = 2*text_radius.getText()* Math.PI;
+				c_a.text_area.setText(answer_area);
+				c_a.text_perimeter.setText(answer_perimeter);
+			}
+		});
+		clear.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e){
+				c_a.text_area.setText(null);
+				c_a.text_perimeter.setText(null);
+				text_radius.setText(null);
+			}
+		});
 	}
 }
 
