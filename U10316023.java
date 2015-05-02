@@ -12,9 +12,15 @@
  
 public  class  U10316023 extends JFrame{
 	private CIRCLE user_circle = new CIRCLE();
-
+	private SQUARE user_square = new SQUARE();
+	private TRIANGLE user_triangle = new TRIANGLE();
+	
+	
 	public U10316023(){
 		add(user_circle,BorderLayout.NORTH);
+		add(user_square,BorderLayout.CENTER);
+		add(user_triangle,BorderLayout.SOUTH);
+
 	}
 	
 	public static void main (String[] args){
@@ -62,5 +68,45 @@ class CIRCLE extends JPanel{
 		
 		add(circle,BorderLayout.WEST);
 		add(c_a,BorderLayout.EAST);
+	}
+}
+
+class TRIANGLE extends JPanel{
+	JPanel triangle = new JPanel();
+	JTextField text_side = new JTextField(4);
+	JButton calculate = new JButton("Calculate");
+	JButton clear = new JButton("Clear");
+	ANS t_a = new ANS();
+	
+	TRIANGLE(){
+		triangle.setLayout(new GridLayout(1,4));
+		triangle.add(new JLabel("Side :"));
+		triangle.add(text_side);
+		triangle.add(calculate);
+		triangle.add(clear);
+		triangle.setBorder(new TitledBorder("Regular triangle"));		
+		
+		add(triangle,BorderLayout.WEST);
+		add(t_a,BorderLayout.EAST);
+	}
+}
+
+class SQUARE extends JPanel{
+	JPanel square = new JPanel();
+	JTextField text_side = new JTextField(4);
+	JButton calculate = new JButton("Calculate");
+	JButton clear = new JButton("Clear");
+	ANS s_a = new ANS();
+	
+	SQUARE(){
+		square.setLayout(new GridLayout(1,4));
+		square.add(new JLabel("Side :"));
+		square.add(text_side);
+		square.add(calculate);
+		square.add(clear);	
+		square.setBorder(new TitledBorder("Square"));
+		
+		add(square,BorderLayout.WEST);
+		add(s_a,BorderLayout.EAST);
 	}
 }
