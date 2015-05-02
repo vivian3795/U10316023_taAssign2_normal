@@ -9,6 +9,7 @@
  import java.awt.event.*;
  import java.awt.*;
  import javax.swing.border.*;
+ import java.text.DecimalFormat;
  
 public  class  U10316023 extends JFrame{
 	private CIRCLE user_circle = new CIRCLE();
@@ -71,10 +72,12 @@ class CIRCLE extends JPanel{
 		calculate.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e){
-				String answer_area = text_radius.getText()*text_radius.getText()* Math.PI;
-				String answer_perimeter = 2*text_radius.getText()* Math.PI;
-				c_a.text_area.setText(answer_area);
-				c_a.text_perimeter.setText(answer_perimeter);
+				DecimalFormat df=new DecimalFormat("#.##");
+				double radius = Double.parseDouble(text_radius.getText());
+				double answer_area =  radius * radius * Math.PI;
+				double answer_perimeter = 2 *  Math.PI * radius;
+				c_a.text_area.setText(df.format(answer_area));
+				c_a.text_perimeter.setText(df.format(answer_perimeter));
 			}
 		});
 		clear.addActionListener(new ActionListener(){
