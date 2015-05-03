@@ -75,12 +75,17 @@ class CIRCLE extends JPanel{
 		circle.add(text_radius);
 		circle.add(calculate);
 		circle.add(clear);
-		//set border title
-		circle.setBorder(new TitledBorder("Circle"));
 		
 		//add circle and c_a
 		add(circle,BorderLayout.WEST);
 		add(c_a,BorderLayout.EAST);
+		
+		//set border title
+		setBorder(new TitledBorder("Circle"));
+		//set cursor
+		setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+		//set background
+		setBackground(new Color(251,221,191));
 		
 		calculate.addActionListener(new ActionListener(){
 			@Override//when press calculate, it would calculate answer.
@@ -127,12 +132,17 @@ class TRIANGLE extends JPanel{
 		triangle.add(text_side);
 		triangle.add(calculate);
 		triangle.add(clear);
-		//set border title
-		triangle.setBorder(new TitledBorder("Regular triangle"));		
-		
+
 		//add triangle and t_a
 		add(triangle,BorderLayout.WEST);
 		add(t_a,BorderLayout.EAST);
+		
+		//set border title
+		setBorder(new TitledBorder("Regular triangle"));		
+		//set cursor
+		setCursor(new Cursor(Cursor.MOVE_CURSOR));
+		//set background
+		setBackground(new Color(210,224,251));
 		
 		calculate.addActionListener(new ActionListener(){
 			@Override//when press calculate, it would calculate answer.
@@ -179,12 +189,16 @@ class SQUARE extends JPanel{
 		square.add(text_side);
 		square.add(calculate);
 		square.add(clear);	
-		//set border title
-		square.setBorder(new TitledBorder("Square"));
-		
+
 		//add square and s_a
 		add(square,BorderLayout.WEST);
 		add(s_a,BorderLayout.EAST);
+		//set border title
+		setBorder(new TitledBorder("Square"));	
+		//set cursor
+		setCursor(new Cursor(Cursor.HAND_CURSOR));
+		//set background
+		setBackground(new Color(190,252,222));
 		
 		calculate.addActionListener(new ActionListener(){
 			@Override//when press calculate, it would calculate answer.
